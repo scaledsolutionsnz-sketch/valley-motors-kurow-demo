@@ -8,8 +8,8 @@
   --line:#2a2e37;
   --muted:#8a9099;
   --text:#20242b;
-  --accent:#ff6a1a;
-  --accent-deep:#e2500f;
+  --accent:#e0202a;
+  --accent-deep:#b3141b;
   --radius:14px;
   --radius-sm:10px;
   --maxw:1200px;
@@ -41,7 +41,7 @@ a{color:inherit;text-decoration:none}
   letter-spacing:.04em;text-transform:uppercase;font-size:14px;padding:15px 26px;border-radius:999px;
   border:1.5px solid transparent;cursor:pointer;transition:transform .18s ease,background .2s,box-shadow .2s;min-height:48px}
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--accent);color:#12130f;box-shadow:0 12px 28px -12px rgba(255,106,26,.7)}
+.btn-primary{background:var(--accent);color:#12130f;box-shadow:0 12px 28px -12px rgba(224,32,42,.7)}
 .btn-primary:hover{background:var(--accent-deep);color:#fff}
 .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
 .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
@@ -72,6 +72,7 @@ header.nav{position:sticky;top:0;z-index:1000;background:rgba(14,15,18,.86);back
 .nav-links a{color:#d6dae0;font-size:14px;font-weight:600;letter-spacing:.03em;transition:color .2s}
 .nav-links a:hover{color:var(--accent)}
 .nav-cta{display:flex;align-items:center;gap:14px}
+.nav-cta .btn{font-size:12px;padding:9px 18px;min-height:38px;letter-spacing:.03em}
 .nav-phone{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:14px}
 .nav-phone .svg{color:var(--accent);width:18px;height:18px}
 .burger{display:none;background:none;border:1px solid rgba(255,255,255,.25);border-radius:9px;width:46px;height:44px;color:#fff;cursor:pointer}
@@ -107,7 +108,7 @@ header.nav{position:sticky;top:0;z-index:1000;background:rgba(14,15,18,.86);back
 .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .trust-item{display:flex;gap:16px;align-items:flex-start;padding:34px 30px;border-right:1px solid rgba(255,255,255,.08)}
 .trust-item:last-child{border-right:none}
-.trust-item .ic{width:46px;height:46px;border-radius:11px;background:rgba(255,106,26,.14);color:var(--accent);display:grid;place-items:center;flex:none}
+.trust-item .ic{width:46px;height:46px;border-radius:11px;background:rgba(224,32,42,.14);color:var(--accent);display:grid;place-items:center;flex:none}
 .trust-item .ic .svg{width:22px;height:22px}
 .trust-item h4{font-family:"Chivo";font-size:16px;font-weight:700;margin-bottom:3px;letter-spacing:.02em}
 .trust-item p{color:var(--muted);font-size:14px;line-height:1.5}
@@ -147,7 +148,7 @@ header.nav{position:sticky;top:0;z-index:1000;background:rgba(14,15,18,.86);back
 .crew-card h3{font-size:26px;text-transform:uppercase;color:#fff}
 .crew-card .role-sub{color:var(--accent);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:4px 0 10px}
 .crew-card p{color:#a8adb6;font-size:14px}
-.badge-pill{display:inline-block;background:rgba(255,106,26,.14);color:var(--accent);font-weight:700;font-size:11px;
+.badge-pill{display:inline-block;background:rgba(224,32,42,.14);color:var(--accent);font-weight:700;font-size:11px;
   letter-spacing:.14em;text-transform:uppercase;padding:6px 13px;border-radius:999px;margin-bottom:14px}
 
 /* Reviews */
@@ -169,7 +170,7 @@ header.nav{position:sticky;top:0;z-index:1000;background:rgba(14,15,18,.86);back
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px}
 .info-row{display:flex;gap:15px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.09)}
-.info-row .ic{width:44px;height:44px;border-radius:11px;background:rgba(255,106,26,.14);color:var(--accent);display:grid;place-items:center;flex:none}
+.info-row .ic{width:44px;height:44px;border-radius:11px;background:rgba(224,32,42,.14);color:var(--accent);display:grid;place-items:center;flex:none}
 .info-row h4{font-family:"Chivo";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
 .info-row a,.info-row p{color:#eef0f3;font-size:16px;font-weight:600}
 .socials{display:flex;gap:12px;margin-top:24px}
@@ -240,3 +241,14 @@ footer.foot{background:var(--ink);color:#cfd3da;padding:56px 0 30px;border-top:1
   .reveal{opacity:1;transform:none;transition:none}
   #intro .mark,#intro .bar{animation:none;opacity:1}
 }
+
+/* --- Valley Motors: logo, nav red lines, gallery (added) --- */
+header.nav{border-top:3px solid var(--accent);border-bottom:3px solid var(--accent)}
+.brand-logo{height:38px;width:auto;display:block}
+#intro .intro-logo{width:min(360px,72vw);height:auto;display:block;margin:0 auto}
+.vm-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.vm-gallery img{width:100%;height:240px;object-fit:cover;border-radius:10px;display:block;transition:transform .4s ease}
+.vm-gallery a{overflow:hidden;border-radius:10px;display:block}
+.vm-gallery a:hover img{transform:scale(1.06)}
+@media(max-width:760px){.vm-gallery{grid-template-columns:1fr 1fr}.vm-gallery img{height:200px}}
+@media(max-width:480px){.vm-gallery{grid-template-columns:1fr}}
