@@ -9,8 +9,8 @@
     if(seen||window.matchMedia("(prefers-reduced-motion: reduce)").matches){intro.remove();}
     else{
       var hide=function(){intro.classList.add("done");setTimeout(function(){intro.remove();},800);};
-      window.addEventListener("load",function(){setTimeout(hide,700);});
-      setTimeout(hide,2200); // never hold the page on a slow connection
+      window.addEventListener("load",function(){setTimeout(hide,350);});
+      setTimeout(hide,1200); // never hold the page on a slow connection
     }
   }
 
@@ -45,12 +45,4 @@
   },{threshold:.14});
   document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});
 
-  // Gmail compose links (built in JS so no raw address in HTML)
-  document.querySelectorAll("a[data-gmail]").forEach(function(a){
-    var user=a.getAttribute("data-user")||"",domain=a.getAttribute("data-domain")||"";
-    var base="https://mail.google.com/mail/?view=cm&fs=1";
-    if(user&&domain){base+="&to="+encodeURIComponent(user+"@"+domain);}
-    base+="&su="+(a.getAttribute("data-su")||"")+"&body="+(a.getAttribute("data-body")||"");
-    a.href=base;a.target="_blank";a.rel="noopener";
-  });
 })();
